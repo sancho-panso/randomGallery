@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="css/custom_css.css">
+    <title>Random Gallery</title>
+  </head>
+  <body>
+    <form action=""></form>
+      <div>
+        <label for="vardas">Vardas:</label>
+        <input id="vardas" type="text">
+      </div>
+      <div>
+        <label for="vardas">Pavardas:</label>
+        <input id="pavarde" type="text">
+      </div>
+      <div>
+        <input id="submit" type="submit" value="Siųsti">
+      </div>
+      <p></p>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script>
+      const forma = document.querySelector('form');
+      const vardas = document.getElementById('vardas');
+      const pavarde = document.getElementById('pavarde');
+      const submit = document.getElementById('submit');
+      const pranesimas = document.querySelector('p');
+
+      forma.onsubmit = function (e) {
+        if(vardas.value === '' ||pavarde.value === '' ){
+          e.preventDefault();
+          pranesimas.innerHTML = "klaida"
+        }
+      }
+
+    </script>
+  </body>
+</html>
