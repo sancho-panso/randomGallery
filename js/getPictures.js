@@ -49,9 +49,17 @@
     
     document.querySelector('.showSaved').onclick= function(){
         let position = JSON.parse(localStorage.getItem('savedPosition'))
-        let gallery = document.querySelectorAll('img');
-        for (let index = 0; index < gallery.length; index++) {
-            gallery[index].src = position[index]
+        let nest = document.querySelector('ul');
+        while (nest.firstChild){
+            nest.removeChild(nest.firstChild)
+        }
+        for (let index = 0; index < position.length; index++) {
+            let photoLink = document.createElement('li');
+                let photo = document.createElement('img')
+                photo.src = position[index]
+                photo.onclick = function(e){e.target.src ='/img/click.jpg '};
+                photoLink.appendChild(photo);
+                nest.appendChild(photoLink);
         }
     }
     
